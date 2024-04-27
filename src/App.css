@@ -79,7 +79,7 @@ div.post p.info {
   gap: 10px;
 }
 
-div.post p.info a.author {
+div.post p.info span.author {
   color: #333;
   text-decoration: none;
 }
