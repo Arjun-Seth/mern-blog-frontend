@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Navigate } from "react-router-dom";
+import { BACKEND_SERVER_URL } from "../Helper";
+
 import Editor from "../Editor";
-
-
 
 export default function CreatePost() {
     const [title, setTitle] = useState('');
@@ -20,7 +20,7 @@ export default function CreatePost() {
         // console.log(files);
         ev.preventDefault();
 
-        const response = await fetch('http://localhost:4000/post', {
+        const response = await fetch(`${BACKEND_SERVER_URL}/post`, {
             method: 'POST',
             body: data,
             credentials: 'include',

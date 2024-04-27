@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
+import { BACKEND_SERVER_URL } from "../Helper";
 import Post from "../Post";
 
 function IndexPage() {
     const [posts, setPosts] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:4000/post').then(response => {
+        fetch(`${BACKEND_SERVER_URL}/post`).then(response => {
             response.json().then(posts => {
                 // console.log(posts);
                 setPosts(posts);

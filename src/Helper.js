@@ -1,0 +1,1 @@
+export const BACKEND_SERVER_URL = "https://mern-blog-backend-bomv.onrender.com";

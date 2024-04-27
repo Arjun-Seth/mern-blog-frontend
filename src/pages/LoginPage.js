@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { Navigate } from "react-router-dom";
 import { UserContext } from "../UserContext";
+import { BACKEND_SERVER_URL } from "../Helper";
 
 export default function LoginPage() {
     const [username, setUsername] = useState('');
@@ -9,7 +10,7 @@ export default function LoginPage() {
     const { setUserInfo } = useContext(UserContext);
     async function login(ev) {
         ev.preventDefault();
-        const response = await fetch('http://localhost:4000/login',
+        const response = await fetch(`${BACKEND_SERVER_URL}/login`,
             {
                 method: 'POST',
                 body: JSON.stringify({ username, password }),
